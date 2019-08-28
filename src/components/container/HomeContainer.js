@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withNavigation } from "react-navigation";
 import { connect } from "react-redux";
 
-import Home from "../presentational/Home";
+import Home from "@presentational/Home";
 
 class HomeContainer extends Component {
   render() {

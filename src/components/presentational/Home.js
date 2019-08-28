@@ -9,53 +9,60 @@ const Home = props => {
     <Container>
       <Title>Wear.</Title>
       <ButtonWraper>
-        <TouchableOpacity onPress={() => props.navigation.navigate("Up")}>
-          <LinearGradient
-            colors={["#FF904F", "#FFC350"]}
-            style={{ borderRadius: 10, marginRight: 40, marginLeft: 40, marginTop: 40 }}
-          >
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate("Picker", { type: "UP" })}
+        >
+          <CustomLinearGradient colors={["#FF904F", "#FFC350"]}>
             <Button>
-              <Text style={{ textAlign: "center", color: "white" }}>Adicionar Roupas de cima</Text>
+              <Text style={{ textAlign: "center", color: "white" }}>
+                Adicionar Roupas de cima
+              </Text>
             </Button>
-          </LinearGradient>
+          </CustomLinearGradient>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate("Picker", { type: "DW" })}
+        >
+          <CustomLinearGradient colors={["#FF904F", "#FFC350"]}>
+            <Button>
+              <Text style={{ textAlign: "center", color: "white" }}>
+                Adicionar Roupas de baixo
+              </Text>
+            </Button>
+          </CustomLinearGradient>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => {}}>
-          <LinearGradient
-            colors={["#FF904F", "#FFC350"]}
-            style={{ borderRadius: 10, marginRight: 40, marginLeft: 40, marginTop: 40 }}
-          >
+          <CustomLinearGradient colors={["#FF904F", "#FFC350"]}>
             <Button>
-              <Text style={{ textAlign: "center", color: "white" }}>Adicionar Roupas de baixo</Text>
+              <Text style={{ textAlign: "center", color: "white" }}>
+                Ver Favoritas
+              </Text>
             </Button>
-          </LinearGradient>
+          </CustomLinearGradient>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => {}}>
-          <LinearGradient
-            colors={["#FF904F", "#FFC350"]}
-            style={{ borderRadius: 10, marginRight: 40, marginLeft: 40, marginTop: 40 }}
-          >
+          <CustomLinearGradient colors={["#FF904F", "#FFC350"]}>
             <Button>
-              <Text style={{ textAlign: "center", color: "white" }}>Ver Favoritas</Text>
+              <Text style={{ textAlign: "center", color: "white" }}>
+                Montar look
+              </Text>
             </Button>
-          </LinearGradient>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => {}}>
-          <LinearGradient
-            colors={["#FF904F", "#FFC350"]}
-            style={{ borderRadius: 10, marginRight: 40, marginLeft: 40, marginTop: 40 }}
-          >
-            <Button>
-              <Text style={{ textAlign: "center", color: "white" }}>Montar look</Text>
-            </Button>
-          </LinearGradient>
+          </CustomLinearGradient>
         </TouchableOpacity>
       </ButtonWraper>
     </Container>
   );
 };
+
+const CustomLinearGradient = styled(LinearGradient)`
+  border-radius: 10;
+  margin-right: 10;
+  margin-left: 10;
+  margin-top: 40;
+`;
 
 const Button = styled.View`
   justify-content: center;
